@@ -1,0 +1,43 @@
+# *
+User-agent: *
+Allow: /
+
+# *
+User-agent: *
+Disallow: /api/
+Disallow: /api.php
+Disallow: /webhook.php
+Disallow: /logs/
+Disallow: /order-status/
+Disallow: /checkout/
+Disallow: /cart/
+
+# GPTBot
+User-agent: GPTBot
+Allow: /
+
+# PerplexityBot
+User-agent: PerplexityBot
+Allow: /
+
+# Google-Extended
+User-agent: Google-Extended
+Allow: /
+
+# anthropic-ai
+User-agent: anthropic-ai
+Allow: /
+
+# Bingbot
+User-agent: Bingbot
+Allow: /
+
+# ClaudeBot
+User-agent: ClaudeBot
+Allow: /
+
+# Host
+Host: https://zahidaan.in
+
+# Sitemaps
+Sitemap: https://zahidaan.in/sitemap.xml

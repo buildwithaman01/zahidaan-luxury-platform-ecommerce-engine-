@@ -1,0 +1,681 @@
+# SEO AGENT TASK # 13 · AGENT SEO + AEO + GEO
+## Traditional SEO · Answer Engine Optimization · Generative Engine Optimization · Local SEO · GBP
+
+> Read `00_MASTER_PLAN.md` first.
+> This agent owns ALL search visibility — Google, AI Overviews, ChatGPT, Perplexity, Gemini, Bing Copilot.
+> Pehchanly executes this. No client action needed except providing NAP data (already in Master Plan).
+
+---
+
+## WHY THIS AGENT EXISTS IN 2026
+
+Search has split into four distinct channels. ZAHIDAAN must win all four:
+
+| Channel | Engine | What Wins Here |
+|---|---|---|
+| Traditional SEO | Google organic | Technical SEO + content + backlinks |
+| Local SEO | Google Maps / Local Pack | GBP + NAP consistency + reviews |
+| AEO — Answer Engine Optimization | Google AI Overviews, Featured Snippets | Structured Q&A content + schema |
+| GEO — Generative Engine Optimization | ChatGPT, Perplexity, Gemini, Copilot | Entity authority + cited sources + brand mentions |
+
+Missing any one of these means leaving traffic on the table. A perfume brand in Patancheru with zero AI search presence in 2026 is invisible to an entire generation of buyers who ask ChatGPT "best attar shop near Hyderabad" before ever opening Google Maps.
+
+---
+
+## SECTION 1: TRADITIONAL SEO
+
+### 1.1 Target Keyword Clusters
+
+**Cluster A — Local / Near-Me (highest intent)**
+```
+attar shop in patancheru
+attar shop near isnapur
+perfume shop patancheruvu
+best attar shop sangareddy
+attar near kolkuri shopping mall
+alcohol free attar patancheru
+arabian oud hyderabad
+oud perfume shop gachibowli
+long lasting attar hyderabad
+zahidaan attars perfumes
+```
+
+**Cluster B — Product / Category (transactional)**
+```
+buy attar online india
+alcohol free attar for men
+arabian oud perfume online india
+long lasting attar online
+authentic attar online
+best oud perfume india under 2000
+bakhoor buy online india
+luxury perfume gift set india
+attar gift set online india
+discovery perfume set india
+```
+
+**Cluster C — Informational / AEO (top of funnel)**
+```
+what is attar perfume
+difference between attar and perfume
+how long does attar last on skin
+alcohol free perfume india
+is attar better than perfume
+how to apply attar correctly
+what are top notes heart notes base notes
+best attar for summer india
+oud vs musk which is stronger
+how to make perfume last longer
+```
+
+**Cluster D — Brand / Competitor adjacent**
+```
+zahidaan perfumes
+zahidaan attars review
+zahidaan patancheru
+alternatives to ajmal attar india
+rasasi perfume india
+arab perfume india online
+```
+
+---
+
+### 1.2 On-Page SEO — Page-by-Page Targets
+
+#### Homepage `/`
+```
+Title:     ZAHIDAAN Attars & Perfumes | Authentic Oud & Attar — Patancheru, Hyderabad
+Meta Desc: Shop luxury attars, Arabian ouds, and French perfumes at ZAHIDAAN — Patancheru's
+           premier fragrance boutique. Alcohol-free, long-lasting. Pan-India delivery.
+H1:        The Essence of Devotion (brand headline — Garamond display)
+H2s:       Our Bestsellers | A Fragrance Born from Devotion | Why Choose ZAHIDAAN
+```
+
+#### Shop `/shop`
+```
+Title:     Shop Attars, Ouds & Perfumes Online | ZAHIDAAN
+Meta Desc: Browse our full collection of alcohol-free attars, Arabian ouds, French perfumes,
+           bakhoor, and luxury gift sets. Free shipping above ₹[TBD]. Pan-India delivery.
+H1:        Our Fragrance Collection
+```
+
+#### Category — Attars `/shop/attars`
+```
+Title:     Alcohol-Free Attars Online | Pure Ittar | ZAHIDAAN
+Meta Desc: Buy authentic alcohol-free attars online. Long-lasting, skin-friendly, traditional
+           Indian ittars. Shop Ruh Al Oud, Jannat Al Firdaus & more. Pan-India delivery.
+H1:        Alcohol-Free Attars — Pure Tradition
+```
+
+#### Category — Ouds `/shop/ouds`
+```
+Title:     Arabian Oud Perfumes Online India | ZAHIDAAN
+Meta Desc: Discover premium Arabian oud perfumes online in India. Deep, smoky, long-lasting
+           oud EDPs for men and women. Shop Al Zahidaan Noir, Desert King & more.
+H1:        Arabian Ouds — The Soul of the East
+```
+
+#### Product Page `/product/[slug]`
+```
+Title:     [Product Name] — [Size] | [Category] | ZAHIDAAN (max 60 chars)
+Example:   Ruh Al Oud Attar 12ml | Alcohol-Free | ZAHIDAAN
+Meta Desc: [Product Name] — [Top notes] opening into [heart notes] with [base notes].
+           Long-lasting [X] hours. [Size] available. ₹[Price]. Free shipping above ₹[TBD].
+H1:        [Product Name]
+```
+
+#### About `/about`
+```
+Title:     Our Story | ZAHIDAAN Attars & Perfumes — Patancheru
+Meta Desc: ZAHIDAAN was born from devotion to authentic fragrance. Discover our story —
+           from Isnapur X Road, Patancheru to doorsteps across India.
+H1:        A Fragrance Born from Devotion
+```
+
+#### Blog `/blog/[slug]`
+```
+Title:     [Post Title] | ZAHIDAAN Fragrance Journal
+Meta Desc: [First 155 chars of excerpt]
+H1:        [Post Title exactly]
+```
+
+---
+
+### 1.3 Technical SEO Checklist
+
+**Crawlability**
+- [ ] `/robots.txt` — allow all, disallow `/api.php`, `/webhook.php`, `/mail.php`, `/logs/`
+- [ ] `/sitemap.xml` — auto-generated by `next-sitemap`, includes all products + blog posts + category pages
+- [ ] Submit sitemap to Google Search Console on launch day
+- [ ] Submit sitemap to Bing Webmaster Tools on launch day
+- [ ] No noindex tags on any public page
+- [ ] Canonical tags on all pages (self-referencing)
+- [ ] Hreflang not needed (India-only, single language)
+
+**Core Web Vitals**
+- [ ] LCP under 2.5s — hero image preloaded, served WebP from Sanity CDN
+- [ ] CLS under 0.1 — all images have explicit width + height attributes
+- [ ] INP under 200ms — no heavy JS on initial load, Framer Motion lazy loaded
+- [ ] Test with PageSpeed Insights after Cloudflare is live
+
+**URL Structure**
+```
+✓ /shop/attars          (not /shop?category=attar)
+✓ /product/ruh-al-oud   (not /product?id=12)
+✓ /blog/what-is-attar   (not /blog?post=45)
+All lowercase, hyphens only, no underscores, trailing slash consistent (trailingSlash: true in next.config.js)
+```
+
+**Internal Linking**
+- Homepage → Featured Products (product pages)
+- Category pages → individual products
+- Product pages → Related Products (3–4 links)
+- Blog posts → relevant product pages (e.g. "What is Oud?" → links to Oud category)
+- Footer → all category pages + blog + about + contact
+
+---
+
+### 1.4 `robots.txt`
+```
+User-agent: *
+Allow: /
+
+Disallow: /api.php
+Disallow: /webhook.php
+Disallow: /mail.php
+Disallow: /logs/
+Disallow: /order-status/
+Disallow: /checkout/
+Disallow: /cart/
+
+Sitemap: https://zahidaan.in/sitemap.xml
+```
+
+### 1.5 `next-sitemap.config.js`
+```javascript
+/** @type {import('next-sitemap').IConfig} */
+module.exports = {
+  siteUrl: 'https://zahidaan.in',
+  generateRobotsTxt: true,
+  robotsTxtOptions: {
+    policies: [
+      { userAgent: '*', allow: '/' },
+      { userAgent: '*', disallow: ['/api.php', '/webhook.php', '/logs/', '/order-status/', '/checkout/', '/cart/'] }
+    ],
+    additionalSitemaps: ['https://zahidaan.in/sitemap.xml']
+  },
+  exclude: ['/order-status/*', '/checkout', '/cart'],
+  changefreq: 'weekly',
+  priority: 0.7,
+  transform: async (config, path) => {
+    // Higher priority for product and category pages
+    const priority =
+      path === '/' ? 1.0 :
+      path.startsWith('/shop') ? 0.9 :
+      path.startsWith('/product') ? 0.9 :
+      path.startsWith('/blog') ? 0.7 : 0.5
+    return { loc: path, changefreq: 'weekly', priority, lastmod: new Date().toISOString() }
+  }
+}
+```
+
+---
+
+## SECTION 2: SCHEMA MARKUP (JSON-LD)
+
+Every schema block goes inside `<script type="application/ld+json">` in the page `<head>`.
+In Next.js, add via `<Script>` or inline in layout/page metadata.
+
+### 2.1 LocalBusiness Schema (Homepage)
+```json
+{
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness", "Store"],
+  "name": "Zahidaan Attars & Perfumes",
+  "alternateName": "ZAHIDAAN",
+  "description": "Premier destination for luxury attars, Arabian ouds, French perfumes, and bakhoor in Isnapur, Patancheru. Authentic, long-lasting, alcohol-free fragrances with pan-India delivery.",
+  "url": "https://zahidaan.in",
+  "telephone": "[CLIENT PHONE]",
+  "email": "[CLIENT EMAIL]",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Shop 1, Near Kolkuri Shopping Mall, Isnapur X Road",
+    "addressLocality": "Patancheru",
+    "addressRegion": "Telangana",
+    "postalCode": "502307",
+    "addressCountry": "IN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 17.5285,
+    "longitude": 78.3012
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+      "opens": "10:00",
+      "closes": "21:00"
+    }
+  ],
+  "priceRange": "₹499 – ₹3,499",
+  "servesCuisine": null,
+  "hasMap": "https://maps.google.com/?q=Zahidaan+Attars+Perfumes+Patancheru",
+  "sameAs": [
+    "https://instagram.com/zahidaan",
+    "https://facebook.com/zahidaan"
+  ],
+  "areaServed": [
+    "Isnapur", "Patancheruvu", "Muthangi", "Sangareddy",
+    "Ramachandrapuram", "Lingampally", "Gachibowli"
+  ],
+  "currenciesAccepted": "INR",
+  "paymentAccepted": "Cash, UPI",
+  "image": "https://zahidaan.in/og-image.jpg"
+}
+```
+
+### 2.2 Product Schema (Every Product Page)
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "[Product Name]",
+  "description": "[Product short description]",
+  "image": ["[Sanity CDN image URL 1]", "[Sanity CDN image URL 2]"],
+  "brand": {
+    "@type": "Brand",
+    "name": "ZAHIDAAN"
+  },
+  "sku": "[product-slug-size]",
+  "offers": {
+    "@type": "Offer",
+    "url": "https://zahidaan.in/product/[slug]",
+    "priceCurrency": "INR",
+    "price": "[selling price]",
+    "priceValidUntil": "2026-12-31",
+    "availability": "https://schema.org/InStock",
+    "seller": {
+      "@type": "Organization",
+      "name": "Zahidaan Attars & Perfumes"
+    },
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingRate": {
+        "@type": "MonetaryAmount",
+        "currency": "INR",
+        "value": "0"
+      },
+      "shippingDestination": {
+        "@type": "DefinedRegion",
+        "addressCountry": "IN"
+      },
+      "deliveryTime": {
+        "@type": "ShippingDeliveryTime",
+        "handlingTime": { "@type": "QuantitativeValue", "minValue": 1, "maxValue": 2, "unitCode": "DAY" },
+        "transitTime": { "@type": "QuantitativeValue", "minValue": 2, "maxValue": 7, "unitCode": "DAY" }
+      }
+    }
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "[real count once reviews exist — use 12 as placeholder]"
+  }
+}
+```
+
+### 2.3 FAQPage Schema (FAQ Page + Key Product Pages)
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is attar perfume?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Attar (also spelled ittar) is a natural perfume oil distilled from botanical ingredients such as flowers, herbs, spices, and woods. Unlike alcohol-based perfumes, attars are alcohol-free, making them suitable for sensitive skin and permissible for those who prefer alcohol-free fragrances. Attars are traditionally applied directly to pulse points and are known for their long-lasting, skin-warming scent."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is attar alcohol-free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Traditional attars are 100% alcohol-free. They are concentrated natural oils that are applied directly to the skin. At ZAHIDAAN, all our attars are pure, alcohol-free, and skin-friendly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does attar last on skin?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A quality attar typically lasts 6–12 hours on skin, with base notes often lingering even longer. Longevity depends on the specific attar, your skin type, and where it is applied. Pulse points such as the wrists, neck, and inner elbows give the best projection and longevity."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you deliver pan-India?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. ZAHIDAAN delivers across India via DTDC and India Post. For orders within Patancheru and nearby areas (Isnapur, Muthangi, Sangareddy, Lingampally, Gachibowli), we offer same-day or next-day local delivery. Pan-India orders are typically delivered in 3–7 business days."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What payment methods do you accept?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We accept UPI payments (via PhonePe, Google Pay, any UPI app) and Cash on Delivery (COD) for eligible orders. COD is available for local orders at no extra charge. For pan-India COD orders, a small handling fee applies on our minimum order value."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between attar and EDP?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Attar is a pure, concentrated natural oil with no alcohol or synthetic carriers — applied in small quantities directly to skin. EDP (Eau de Parfum) is an alcohol-based spray with typically 15–20% fragrance concentration. Attars are generally longer-lasting and more intimate in projection, while EDPs project more strongly and are easier to apply uniformly. ZAHIDAAN offers both formats."
+      }
+    }
+  ]
+}
+```
+
+### 2.4 BreadcrumbList Schema (Category + Product Pages)
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://zahidaan.in" },
+    { "@type": "ListItem", "position": 2, "name": "Attars", "item": "https://zahidaan.in/shop/attars" },
+    { "@type": "ListItem", "position": 3, "name": "Ruh Al Oud", "item": "https://zahidaan.in/product/ruh-al-oud" }
+  ]
+}
+```
+
+### 2.5 Organization Schema (Sitewide — in root layout)
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Zahidaan Attars and Perfumes",
+  "url": "https://zahidaan.in",
+  "logo": "https://zahidaan.in/logo.svg",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "[CLIENT PHONE]",
+    "contactType": "customer service",
+    "availableLanguage": ["English", "Hindi", "Telugu", "Urdu"]
+  },
+  "sameAs": [
+    "https://instagram.com/zahidaan",
+    "https://facebook.com/zahidaan",
+    "https://g.page/zahidaan-attars-perfumes"
+  ]
+}
+```
+
+---
+
+## SECTION 3: LOCAL SEO — GBP OPTIMIZATION
+
+### 3.1 GBP Setup — Step by Step
+
+1. Go to business.google.com → Add your business
+2. Business name: **Zahidaan Attars & Perfumes** (exactly — no extra words)
+3. Primary category: **Perfume store**
+4. Secondary categories: Cosmetics store · Aromatherapy supply store · Incense supplier
+5. Address: Shop 1, Near Kolkuri Shopping Mall, Isnapur X Road, Patancheru, Sangareddy, Telangana – 502307
+6. Service areas: Isnapur · Patancheruvu · Muthangi · Sangareddy · Ramachandrapuram · Lingampally · Gachibowli
+7. Phone: [Client number]
+8. Website: https://zahidaan.in
+9. Hours: [Client to confirm]
+10. Verify via postcard or phone call
+
+### 3.2 GBP Description (Exact — Copy-Paste)
+```
+Welcome to Zahidaan Attars & Perfumes, the premier destination for luxury fragrances in
+Isnapur, Patancheru. We specialise in authentic, long-lasting attars, premium Arabian Ouds,
+elegant French perfumes, and exclusive bakhoor. Whether you seek a deep signature scent,
+a traditional alcohol-free attar, or a luxurious perfume gift set, ZAHIDAAN offers
+unparalleled quality at every price point. Located near Kolkuri Shopping Mall at Isnapur
+X Road, Patancheru. We offer same-day local delivery in Patancheru, Isnapur, Muthangi,
+and Sangareddy, and secure pan-India shipping via DTDC and India Post.
+```
+
+### 3.3 GBP Posts Strategy (Weekly — Pehchanly manages)
+
+Post every Monday. Rotate through these types:
+
+| Week | Post Type | Example |
+|---|---|---|
+| 1 | Product spotlight | "Ruh Al Oud — Saffron and Oud in its purest form. Available in 6ml and 12ml. Order online or visit our store." |
+| 2 | Educational | "What makes an attar different from a perfume? Alcohol-free, skin-friendly, and lasts 8–10 hours. That's the ZAHIDAAN promise." |
+| 3 | Offer / CTA | "Free shipping on all orders above ₹999 this week. Pan-India delivery. Shop now at zahidaan.in" |
+| 4 | Behind the scenes | "Crafting fragrances is an art. At ZAHIDAAN, every bottle is chosen for soul, not just scent." |
+
+### 3.4 Review Generation Strategy
+
+Target: 30 reviews in first 3 months.
+
+- Generate a Google review shortlink from GBP dashboard
+- After every local delivery, WhatsApp customer: "Assalamualaikum [name], hope you love your ZAHIDAAN fragrance! If you'd like to share your experience, here's our Google review link: [link] — JazakAllah Khair 🌿"
+- Add the same review link to every order confirmation email
+- Print a small card to include in packaging: "Leave us a review — it means the world to us"
+
+### 3.5 NAP Citation Submissions (First 30 Days)
+
+Submit identical NAP to all of these. Use exact spelling: **Zahidaan Attars & Perfumes**
+
+```
+JustDial         → justdial.com/add-listing
+Sulekha          → sulekha.com/list-your-business
+IndiaMart        → indiamart.com/seller
+TradeIndia       → tradeindia.com/register
+Yelp India       → biz.yelp.in
+Yellow Pages IN  → yellowpages.in
+hotfrog India    → hotfrog.in
+Grotal           → grotal.com
+brownbook        → brownbook.net
+cylex India      → cylex-india.in
+```
+
+---
+
+## SECTION 4: AEO — ANSWER ENGINE OPTIMIZATION
+
+AEO targets Google AI Overviews and featured snippets. When someone searches "best attar shop near Patancheru" or "what is attar perfume", ZAHIDAAN should appear in the AI-generated answer box at the top of the page.
+
+### 4.1 How AEO Works
+
+Google AI Overviews pull from pages that:
+- Directly answer a question in the first paragraph
+- Use structured headings that mirror the question
+- Have FAQ schema markup
+- Are on a site with good E-E-A-T (Experience, Expertise, Authority, Trust)
+
+### 4.2 Content Rules for AEO
+
+**Rule 1 — Answer first, explain after**
+Every blog post and FAQ answer must state the direct answer in the first sentence, then elaborate. Google AI Overviews pull the first 2–3 sentences.
+
+Wrong:
+> "There has been a long debate about whether attar or perfume is better for daily use. Many fragrance lovers prefer..."
+
+Right:
+> "Attar is better than alcohol-based perfume for sensitive skin because it is 100% natural and contains no alcohol. It also lasts longer on skin — typically 6–12 hours — and carries deeper, more intimate base notes."
+
+**Rule 2 — Use question-form H2 headings**
+```
+H2: What is attar perfume?
+H2: How long does attar last on skin?
+H2: Is attar alcohol-free?
+H2: What is the difference between attar and EDP?
+H2: How should attar be applied?
+H2: Which attar is best for summer?
+```
+
+**Rule 3 — Keep answers under 60 words for snippet eligibility**
+Google Featured Snippets prefer concise answers. 40–60 words is the sweet spot.
+
+**Rule 4 — Include FAQ schema on all blog posts and the FAQ page**
+Already specified in Section 2.3 above.
+
+### 4.3 AEO Blog Content Plan (First 6 Posts)
+
+Write these before launch. Each post targets one informational cluster keyword.
+
+| Post Title | Target Keyword | Word Count | AEO Target |
+|---|---|---|---|
+| What is Attar Perfume? A Complete Guide | what is attar perfume | 1,200 | Featured snippet for definition |
+| Attar vs Perfume: Which is Better for You? | attar vs perfume | 1,000 | Featured snippet + AI Overview |
+| How to Apply Attar for Maximum Longevity | how to apply attar | 800 | Featured snippet for "how to" |
+| Top Notes, Heart Notes, Base Notes Explained | top notes heart notes base notes | 900 | Featured snippet for definition |
+| Best Attars for Summer in India | best attar for summer india | 1,000 | AI Overview list result |
+| What is Oud? The King of Fragrances | what is oud perfume | 1,000 | Featured snippet + AI Overview |
+
+**Content brief for each post:**
+- Intro: direct answer to the question (40–60 words)
+- 4–6 H2 sections, each answering a related sub-question
+- At least one internal link to a relevant product or category
+- FAQ schema at bottom (3–5 Q&As)
+- Author bio: "By the ZAHIDAAN Fragrance Team" (builds E-E-A-T)
+
+---
+
+## SECTION 5: GEO — GENERATIVE ENGINE OPTIMIZATION
+
+GEO is the newest frontier. When someone asks ChatGPT, Perplexity, Google Gemini, or Bing Copilot a question like "where can I buy authentic attar in Hyderabad" or "best alcohol-free perfume brands in India", you want ZAHIDAAN to appear in the generated answer.
+
+### 5.1 How GEO Works
+
+AI models like ChatGPT and Perplexity build their answers from:
+- Crawled web content (CommonCrawl, Bing index)
+- Wikipedia and knowledge graph entries
+- Citations from high-authority sites (news, directories, review sites)
+- Mentions across multiple independent sources
+
+A brand that exists on only one website is invisible to AI. A brand mentioned consistently across 15–20 independent sources gets cited.
+
+### 5.2 GEO Strategy for ZAHIDAAN
+
+**Phase 1 — Entity Establishment (Do first)**
+
+Create a consistent brand entity that AI models can recognize:
+
+- [ ] GBP live with complete profile (already planned)
+- [ ] IndiaMart listing with full product catalog
+- [ ] JustDial listing complete with photos
+- [ ] Instagram profile: bio = "Authentic Attars & Arabian Ouds | Patancheru, Hyderabad | Pan-India delivery | zahidaan.in"
+- [ ] Facebook Page: same name, same address, same description
+- [ ] Add ZAHIDAAN to Wikidata as a business entity (free, anyone can do it)
+
+**Phase 2 — Citation Building (Months 1–3)**
+
+Get ZAHIDAAN mentioned on independent pages that AI models crawl:
+
+- [ ] Submit to IndiaFilings or similar business registry directories
+- [ ] Get listed on Sulekha with 5+ photos and full service description
+- [ ] Guest post or Q&A on fragrance forums (Basenotes, Fragrantica community, Reddit r/indiafragrance)
+- [ ] Contribute to a JustDial or Google Maps Q&A: "Is there an attar shop in Patancheru?" → answer as business
+- [ ] Get at least one external blog or news mention (reach out to a fragrance blogger for a review)
+
+**Phase 3 — AI-Crawlable Content (Ongoing)**
+
+Structure your website content so AI crawlers can extract clean facts:
+
+```
+Every product page must state clearly:
+- Brand: ZAHIDAAN
+- Product type: Attar / Oud / EDP
+- Location: Made available by Zahidaan Attars & Perfumes, Patancheru, Telangana
+- Concentration: [value]
+- Longevity: [X hours]
+- Alcohol-free: Yes/No
+```
+
+This structured, factual content is what AI models extract and cite.
+
+**Phase 4 — Perplexity and ChatGPT Indexing**
+
+- Perplexity crawls live web. As soon as zahidaan.in is live and indexed, it can be cited.
+- Submit sitemap to Bing Webmaster Tools (Bing index feeds Copilot and partially ChatGPT browsing)
+- Ensure robots.txt does NOT block GPTBot or PerplexityBot:
+
+```
+# robots.txt additions for GEO
+User-agent: GPTBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+```
+
+### 5.3 GEO Content Signals
+
+AI models favour content that:
+- Mentions the brand name, location, and product type together in natural language
+- Provides specific, verifiable facts (prices, ingredients, longevity hours)
+- Is written in a consistent voice across all pages
+- Has external sources linking or mentioning the brand
+
+**Template paragraph for About page (optimised for GEO entity extraction):**
+```
+ZAHIDAAN Attars & Perfumes is an Indian luxury fragrance brand based in Patancheru,
+Sangareddy district, Telangana. Founded by Zahid, ZAHIDAAN specialises in authentic
+alcohol-free attars, Arabian oud perfumes, French-style EDPs, and traditional bakhoor.
+The brand takes its name from the Arabic word meaning "The Devoted Ones", reflecting
+its commitment to the craft of perfumery. ZAHIDAAN operates a physical store at Shop 1,
+Near Kolkuri Shopping Mall, Isnapur X Road, Patancheru — 502307, and ships pan-India
+via DTDC and India Post.
+```
+
+This paragraph packs: brand name, category, location (full address), founding person, product types, brand meaning, and delivery reach — everything an AI model needs to build an entity card.
+
+---
+
+## SECTION 6: SEO LAUNCH CHECKLIST (Pre-Go-Live)
+
+- [ ] Google Search Console: property added, ownership verified via HTML tag in layout.tsx
+- [ ] Bing Webmaster Tools: added and verified
+- [ ] sitemap.xml submitted to both Google and Bing
+- [ ] All 5 schema types implemented and tested via schema.org validator
+- [ ] GBP live and verified
+- [ ] 10 NAP citations submitted (see 3.5)
+- [ ] Instagram and Facebook pages live with matching NAP
+- [ ] robots.txt allows all major AI crawlers
+- [ ] First 3 blog posts live (attar definition, attar vs perfume, how to apply)
+- [ ] FAQ page live with FAQPage schema
+- [ ] All product pages have Product schema
+- [ ] PageSpeed Insights score 85+ on mobile
+
+---
+
+## SECTION 7: ONGOING SEO TASKS (Monthly — Pehchanly)
+
+| Task | Frequency |
+|---|---|
+| Publish 1–2 blog posts | Monthly |
+| GBP post (Monday) | Weekly |
+| Check Google Search Console for errors | Weekly |
+| Reply to all new GBP reviews | Within 48 hours |
+| Monitor keyword rankings via Google Search Console | Monthly |
+| Add new products to IndiaMart/JustDial listings | When new products added |
+| Check Core Web Vitals report in GSC | Monthly |
+| Build 2–3 new directory citations | Monthly (first 6 months) |
+
+---
+
+*This agent is the only one that touches search visibility. No other agent modifies robots.txt, schema, sitemap, or GBP without checking this file first.*

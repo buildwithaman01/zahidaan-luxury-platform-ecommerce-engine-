@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@theme {
+  --color-z-black: #0A0A0A;
+  --color-z-emerald: #1B4332;
+  --color-z-emerald-mid: #2D6A4F;
+  --color-z-amber: #B7860B;
+  --color-z-gold: #D4AF37;
+  --color-z-cream: #FAF6F0;
+  --color-z-charcoal: #1C1C1C;
+  --color-z-mist: #F0EBE3;
+  --color-z-white: #FFFFFF;
+
+  --font-display: var(--font-cormorant), "Cormorant Garamond", serif;
+  --font-body: var(--font-dm-sans), "DM Sans", sans-serif;
+
+  --animate-marquee: marquee 30s linear infinite;
+
+  @keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+  }
+}
+
+/* Custom Base Styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--color-z-cream);
+    color: var(--color-z-charcoal);
+  }
+}
+
+/* Utility Classes for easier use */
+.font-display { font-family: var(--font-display); }
+.font-body { font-family: var(--font-body); }

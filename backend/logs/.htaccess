@@ -1,0 +1,14 @@
+# Deny access to all .log files
+<Files "*.log">
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+# Deny access to .json files (rate limit data)
+<Files "*.json">
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+# Prevent directory listing
+Options -Indexes
