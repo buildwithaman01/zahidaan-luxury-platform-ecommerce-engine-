@@ -13,17 +13,18 @@ export default defineType({
     }),
     defineField({
       name: 'status',
-      title: 'Order Status',
+      title: 'Order Fulfillment Status',
       type: 'string',
+      description: 'Update this as you process the order. Customer will see this on the website.',
       options: {
         list: [
-          { title: 'Pending / Payment Verification', value: 'pending' },
-          { title: 'Confirmed', value: 'confirmed' },
-          { title: 'Packed', value: 'packed' },
-          { title: 'Shipped', value: 'shipped' },
-          { title: 'Delivered', value: 'delivered' },
-          { title: 'Cancelled', value: 'cancelled' },
-          { title: 'Refunded', value: 'refunded' },
+          { title: '🟡 Pending / Check Payment', value: 'pending' },
+          { title: '🟢 Confirmed / Paid', value: 'confirmed' },
+          { title: '📦 Packed', value: 'packed' },
+          { title: '🚚 Shipped', value: 'shipped' },
+          { title: '✅ Delivered', value: 'delivered' },
+          { title: '❌ Cancelled', value: 'cancelled' },
+          { title: '💰 Refunded', value: 'refunded' },
         ],
       },
       initialValue: 'pending',
@@ -122,8 +123,8 @@ export default defineType({
     },
     prepare({ title, customerName, status, total }) {
       return {
-        title: `${title} — ₹${total}`,
-        subtitle: `${customerName} · Status: ${status.toUpperCase()}`,
+        title: `${title || 'New Order'} — ₹${total || 0}`,
+        subtitle: `${customerName || 'Guest'} · Status: ${(status || 'pending').toUpperCase()}`,
       }
     },
   },

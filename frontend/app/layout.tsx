@@ -45,14 +45,18 @@ export const metadata: Metadata = {
     "alcohol free attar patancheru", 
     "arabian oud hyderabad", 
     "long lasting attar hyderabad", 
-    "zahidaan"
+    "zahidaan",
+    "zahidan",
+    "zahidaan.in",
+    "zahidaan perfumes",
+    "zahidaan attars",
+    "zahidaan patancheru",
+    "attar shop near me",
+    "best attar shop hyderabad"
   ],
   metadataBase: new URL('https://zahidaan.in'),
   verification: {
     google: '3wgcw10dmhZr3t0eDRQGBKl4TtABLslef03eQmcSwb4',
-  },
-  alternates: {
-    canonical: '/',
   },
   openGraph: {
     title: 'ZAHIDAAN Attars & Perfumes | Authentic Oud & Attar',
@@ -72,6 +76,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${cormorantGaramond.variable} ${dmSans.variable} scroll-smooth`} suppressHydrationWarning>
       <head>
+        <link rel="icon" type="image/png" href="/favicon.png" />
+        <link rel="apple-touch-icon" href="/favicon.png" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
@@ -100,6 +106,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               "name": "Zahidaan Attars and Perfumes",
+              "alternateName": ["ZAHIDAAN", "Zahidan", "zahidaan.in", "Zahidaan Patancheru"],
               "url": "https://zahidaan.in",
               "logo": "https://zahidaan.in/logo.svg",
               "contactPoint": {
@@ -109,7 +116,7 @@ export default function RootLayout({
                 "availableLanguage": ["English", "Hindi", "Telugu", "Urdu"]
               },
               "sameAs": [
-                "https://instagram.com/zahidaan",
+                "https://www.instagram.com/zahidaanattarsandperfumes",
                 "https://facebook.com/zahidaan",
                 "https://g.page/zahidaan-attars-perfumes"
               ]

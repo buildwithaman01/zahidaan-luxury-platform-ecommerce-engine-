@@ -8,6 +8,9 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: "Shop Attars, Ouds & Perfumes Online | ZAHIDAAN",
   description: "Browse our full collection of alcohol-free attars, Arabian ouds, French perfumes, bakhoor, and luxury gift sets. Pan-India delivery.",
+  alternates: {
+    canonical: 'https://zahidaan.in/shop/',
+  },
 };
 
 const categories = [

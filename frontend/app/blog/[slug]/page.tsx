@@ -30,6 +30,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       description: post.excerpt,
       images: post.coverImage ? [{ url: urlFor(post.coverImage).width(1200).url() }] : [],
     },
+    alternates: {
+      canonical: `https://zahidaan.in/blog/${slug}/`,
+    },
   };
 }
 

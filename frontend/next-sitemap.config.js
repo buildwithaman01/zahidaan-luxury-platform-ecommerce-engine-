@@ -13,7 +13,6 @@ module.exports = {
       { userAgent: 'Bingbot', allow: '/' },
       { userAgent: 'ClaudeBot', allow: '/' }
     ],
-    additionalSitemaps: ['https://zahidaan.in/sitemap.xml']
   },
   exclude: ['/order-status/*', '/checkout', '/cart'],
   changefreq: 'weekly',

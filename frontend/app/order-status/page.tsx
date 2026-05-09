@@ -3,6 +3,8 @@
 import React, { useEffect, useState } from 'react';
 import { getOrderStatus } from '@/lib/api';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useSearchParams } from 'next/navigation';
+import { Suspense } from 'react';
 import Link from 'next/link';
 
 const StatusBadge = ({ status }: { status: string }) => {
@@ -43,9 +45,9 @@ const StatusBadge = ({ status }: { status: string }) => {
   );
 };
 
-export default function OrderStatusPage({ params }: { params: Promise<{ token: string }> }) {
-  const unwrappedParams = React.use(params);
-  const token = unwrappedParams.token;
+function OrderStatusContent() {
+  const searchParams = useSearchParams();
+  const token = searchParams.get('token');
   const [statusData, setStatusData] = useState<any>(null);
   const [loading, setLoading] = useState(true);
 
@@ -162,5 +164,17 @@ export default function OrderStatusPage({ params }: { params: Promise<{ token: s
           </AnimatePresence>
         </div>
       </main>
+  );
+}
+
+export default function OrderStatusPage() {
+  return (
+    <Suspense fallback={
+      <main className="pt-32 pb-24 bg-z-white min-h-[60vh] flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-z-gold"></div>
+      </main>
+    }>
+      <OrderStatusContent />
+    </Suspense>
   );
 }

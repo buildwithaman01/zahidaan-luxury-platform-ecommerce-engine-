@@ -6,12 +6,14 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: "Terms & Conditions | ZAHIDAAN",
   description: "Terms of service and usage for the ZAHIDAAN online storefront.",
+  alternates: {
+    canonical: 'https://zahidaan.in/terms-and-conditions/',
+  },
 };
 
 export default function TermsPage() {
   return (
     <>
-      <Navbar />
       <main className="bg-z-white min-h-screen">
         <section className="pt-48 pb-16 bg-z-black text-z-white">
           <div className="container mx-auto px-6">
@@ -46,7 +48,6 @@ export default function TermsPage() {
           </div>
         </section>
       </main>
-      <Footer />
     </>
   );
 }

@@ -16,11 +16,22 @@ const Footer = () => {
               Authentic Attars & Arabian Ouds — Crafted for the Soul. Experience the spiritual essence of premium luxury fragrances.
             </p>
             <div className="flex space-x-4">
-              {/* Social Icons Placeholder */}
-              <a href="#" className="hover:text-z-gold transition-colors">
+              <a 
+                href="https://www.instagram.com/zahidaanattarsandperfumes" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-z-gold transition-colors"
+                aria-label="Follow us on Instagram"
+              >
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
               </a>
-              <a href="#" className="hover:text-z-gold transition-colors">
+              <a 
+                href="https://facebook.com/zahidaan" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-z-gold transition-colors"
+                aria-label="Follow us on Facebook"
+              >
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
               </a>
             </div>
@@ -73,8 +84,16 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-z-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-[12px] text-z-white/40 space-y-4 md:space-y-0">
-          <div>GST No: [PLACEHOLDER]</div>
-          <div>© 2025 Zahidaan Attars & Perfumes. All rights reserved.</div>
+          <div className="flex items-center space-x-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-z-gold"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span>MSME Verified Boutique</span>
+          </div>
+          <div className="text-center md:text-left">
+            © 2025 Zahidaan Attars & Perfumes. All rights reserved.<br />
+            <span className="mt-1 block">
+              Made with ❤️ by <a href="https://pehchanly.com" target="_blank" rel="noopener noreferrer" className="hover:text-z-gold transition-colors font-medium">Pehchanly</a>
+            </span>
+          </div>
           <div className="flex space-x-6">
             <Link href="/privacy-policy" className="hover:text-z-white transition-colors">Privacy Policy</Link>
             <Link href="/return-policy" className="hover:text-z-white transition-colors">Refund Policy</Link>
@@ -89,7 +108,7 @@ const Footer = () => {
         href="https://wa.me/918297008727"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 z-50 bg-z-emerald hover:bg-z-emerald-mid text-z-white p-4 rounded-full shadow-2xl transition-all duration-300 hover:scale-110 flex items-center justify-center group"
+        className="fixed bottom-28 md:bottom-8 right-6 z-50 bg-z-emerald hover:bg-z-emerald-mid text-z-white p-4 rounded-full shadow-2xl transition-all duration-300 hover:scale-110 flex items-center justify-center group"
       >
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 21l1.9-5.7a8.5 8.5 0 1 1 3.8 3.8z"/></svg>
         <span className="max-w-0 overflow-hidden group-hover:max-w-xs group-hover:ml-2 transition-all duration-300 font-body text-sm font-medium">WhatsApp Us</span>

@@ -4,10 +4,12 @@ import React, { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
+import { motion } from 'framer-motion';
 import { useCartStore } from '@/lib/store';
 import { calculateShipping, OrderType } from '@/lib/shipping';
 import PaymentSelector from './PaymentSelector';
 import { useRouter } from 'next/navigation';
+import { createOrder } from '@/lib/api';
 
 const schema = z.object({
   name: z.string().min(3, 'Name is too short'),
@@ -68,13 +70,7 @@ const OrderForm = () => {
     };
 
     try {
-      const response = await fetch('/api/orders', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(orderData),
-      });
-
-      const result = await response.json();
+      const result = await createOrder(orderData);
       
       if (result.success) {
         clearCart();
@@ -174,26 +170,6 @@ const OrderForm = () => {
             />
           </div>
 
-          {paymentMethod === 'upi' && (
-            <div className="md:col-span-2 p-6 bg-z-mist/50 border border-z-gold/10 space-y-4 animate-in fade-in slide-in-from-top-2 duration-500">
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 bg-z-gold text-z-white rounded-full flex items-center justify-center font-bold text-sm">₹</div>
-                <h4 className="font-display text-lg text-z-black">Payment Verification</h4>
-              </div>
-              <p className="font-body text-xs text-z-charcoal/60 leading-relaxed">
-                After making the payment via PhonePe, please enter the **12-digit UTR / Transaction ID** below. This helps us verify your payment instantly.
-              </p>
-              <div className="space-y-2">
-                <label className="font-body text-[11px] uppercase tracking-widest text-z-amber font-bold">UTR / Transaction Number</label>
-                <input 
-                  {...register('utrNumber')} 
-                  className={`w-full bg-z-white border border-z-gold/20 px-4 py-3 focus:outline-none focus:border-z-gold transition-colors ${errors.utrNumber ? 'border-red-500' : ''}`}
-                  placeholder="Enter 12-digit UTR Number"
-                />
-                {errors.utrNumber && <p className="text-[10px] text-red-500 uppercase">{errors.utrNumber.message}</p>}
-              </div>
-            </div>
-          )}
         </div>
       </div>
 
@@ -203,7 +179,34 @@ const OrderForm = () => {
         setPaymentMethod={setPaymentMethod}
         isCodEligible={shippingInfo.isCodEligible}
         orderType={shippingInfo.type}
+        totalAmount={shippingInfo.total}
       />
+
+      {/* Payment Verification (UTR) - Now appearing AFTER the scanner */}
+      {paymentMethod === 'upi' && (
+        <motion.div 
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="p-6 bg-z-mist/50 border border-z-gold/10 space-y-4 shadow-inner"
+        >
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 bg-z-gold text-z-white rounded-full flex items-center justify-center font-bold text-sm">₹</div>
+            <h4 className="font-display text-lg text-z-black">Payment Verification</h4>
+          </div>
+          <p className="font-body text-xs text-z-charcoal/60 leading-relaxed">
+            Please enter the **12-digit UTR / Transaction ID** from your PhonePe app. This is the final step to secure your order.
+          </p>
+          <div className="space-y-2">
+            <label className="font-body text-[11px] uppercase tracking-widest text-z-amber font-bold">UTR / Transaction Number</label>
+            <input 
+              {...register('utrNumber')} 
+              className={`w-full bg-z-white border border-z-gold/20 px-4 py-3 focus:outline-none focus:border-z-gold transition-colors ${errors.utrNumber ? 'border-red-500' : ''}`}
+              placeholder="Enter 12-digit UTR Number"
+            />
+            {errors.utrNumber && <p className="text-[10px] text-red-500 uppercase">{errors.utrNumber.message}</p>}
+          </div>
+        </motion.div>
+      )}
 
       {/* Order Summary Recap (Mobile) */}
       <div className="lg:hidden bg-z-mist p-6 space-y-4">

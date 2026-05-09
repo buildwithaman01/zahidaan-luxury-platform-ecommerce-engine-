@@ -50,6 +50,9 @@ export async function generateMetadata({ params }: { params: Promise<{ category:
   return {
     title: seo.title,
     description: seo.description,
+    alternates: {
+      canonical: `https://zahidaan.in/shop/${category}/`,
+    },
   };
 }
 

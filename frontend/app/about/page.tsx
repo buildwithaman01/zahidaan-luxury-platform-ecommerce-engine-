@@ -4,6 +4,9 @@ import { motion } from 'framer-motion';
 export const metadata: Metadata = {
   title: "Our Story | ZAHIDAAN Attars & Perfumes",
   description: "ZAHIDAAN was born from devotion to authentic fragrance. Discover our story of craftsmanship and spiritual essence.",
+  alternates: {
+    canonical: 'https://zahidaan.in/about/',
+  },
 };
 
 const MotionDiv = ({ children, delay = 0, className = "" }: any) => (
@@ -60,6 +63,62 @@ export default function AboutPage() {
               </div>
             </div>
           </div>
+        </section>
+
+        {/* Founder Section */}
+        <section className="py-20 md:py-32 bg-z-black text-z-white relative overflow-hidden">
+          <div className="container mx-auto px-6">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-16 items-center">
+              <div className="lg:col-span-5 order-2 lg:order-1 space-y-6 md:space-y-8">
+                <div className="space-y-2 md:space-y-4">
+                  <h4 className="font-body text-[9px] md:text-[10px] uppercase tracking-[4px] text-z-gold font-bold">The Visionary</h4>
+                  <h2 className="font-display text-3xl md:text-6xl text-z-white leading-tight">Mohd <span className="italic">Zahid</span></h2>
+                </div>
+                <div className="font-body text-sm md:text-lg text-z-white/70 leading-relaxed space-y-4 md:space-y-6 max-w-lg">
+                  <p>
+                    Driven by a lifelong passion for the spiritual art of fragrance, Mohd Zahid founded ZAHIDAAN to revive the true essence of traditional attars. His journey is one of meticulous curation, seeking out the rarest resins and botanicals to craft scents that resonate with the soul.
+                  </p>
+                  <p>
+                    For Mohd Zahid, ZAHIDAAN is more than a brand; it is a testament to the beauty of devotion and the timeless allure of pure, alcohol-free perfumery. Every blend in our collection is personally overseen by him, ensuring that the legacy of authentic craftsmanship remains untarnished.
+                  </p>
+                </div>
+                <div className="pt-6">
+                  <div className="inline-block px-6 py-3 border border-z-gold/30 text-z-gold font-display text-sm tracking-widest uppercase italic">
+                    "Fragrance is the soul's silent conversation with the Divine."
+                  </div>
+                </div>
+              </div>
+
+              <div className="lg:col-span-7 order-1 lg:order-2">
+              <div className="lg:col-span-7 order-1 lg:order-2">
+                <div className="relative group">
+                  {/* Elegant Frame */}
+                  <div className="absolute -inset-1 bg-gradient-to-b from-z-gold/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                  
+                  <div className="relative overflow-hidden rounded-sm shadow-2xl border border-z-gold/10 bg-z-white">
+                    <img 
+                      src="/owner.jpg" 
+                      alt="Mohd Zahid - Founder of ZAHIDAAN" 
+                      className="w-full h-auto max-h-[600px] object-cover object-center transition-transform duration-1000 group-hover:scale-[1.02]"
+                    />
+                  </div>
+                  
+                  {/* Designer Label */}
+                  <div className="mt-6 flex items-center justify-between border-b border-z-gold/20 pb-4">
+                    <div>
+                      <p className="font-display text-2xl text-z-gold italic">Mohd Zahid</p>
+                      <p className="font-body text-[10px] uppercase tracking-[4px] text-z-white/40 mt-1">Founder & Master Curator</p>
+                    </div>
+                    <div className="h-8 w-8 rounded-full border border-z-gold/30 flex items-center justify-center">
+                      <div className="w-1.5 h-1.5 bg-z-gold rounded-full" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+          <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-z-gold/[0.03] to-transparent pointer-events-none" />
         </section>
 
         {/* Values Strip */}

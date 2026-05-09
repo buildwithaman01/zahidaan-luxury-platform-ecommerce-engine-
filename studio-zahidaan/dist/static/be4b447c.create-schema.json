@@ -1,0 +1,1022 @@
+[
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "name",
+        "type": "string",
+        "title": "Product Name"
+      },
+      {
+        "options": {
+          "source": "name",
+          "maxLength": 96
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "custom"
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Click \"Generate\" to create a link. If it says \"already in use\", add a number at the end (e.g. oud-gold-2).",
+        "name": "slug",
+        "type": "slug",
+        "title": "URL Slug (Web Address)"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "to": [
+          {
+            "type": "category"
+          }
+        ],
+        "name": "category",
+        "type": "reference"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Men",
+              "value": "Men"
+            },
+            {
+              "title": "Women",
+              "value": "Women"
+            },
+            {
+              "title": "Unisex",
+              "value": "Unisex"
+            }
+          ]
+        },
+        "name": "gender",
+        "type": "string",
+        "title": "Target Gender"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "min",
+                "constraint": 1
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "of": [
+          {
+            "options": {
+              "hotspot": true
+            },
+            "type": "image"
+          }
+        ],
+        "name": "images",
+        "type": "array",
+        "title": "Product Images"
+      },
+      {
+        "rows": 3,
+        "description": "Shown on product cards — max 100 characters",
+        "name": "shortDescription",
+        "type": "text"
+      },
+      {
+        "of": [
+          {
+            "marks": {
+              "annotations": [
+                {
+                  "i18nTitleKey": "inputs.portable-text.annotation.link",
+                  "options": {
+                    "modal": {
+                      "type": "popover"
+                    }
+                  },
+                  "fields": [
+                    {
+                      "validation": [
+                        {
+                          "rules": [
+                            {
+                              "flag": "uri",
+                              "constraint": {
+                                "options": {
+                                  "scheme": [
+                                    "/^http$/",
+                                    "/^https$/",
+                                    "/^tel$/",
+                                    "/^mailto$/"
+                                  ],
+                                  "allowRelative": true,
+                                  "relativeOnly": false,
+                                  "allowCredentials": false
+                                }
+                              }
+                            }
+                          ],
+                          "level": "error"
+                        }
+                      ],
+                      "description": "A valid web, email, phone, or relative link.",
+                      "name": "href",
+                      "type": "url",
+                      "title": "Link"
+                    }
+                  ],
+                  "name": "link",
+                  "type": "object"
+                }
+              ],
+              "decorators": [
+                {
+                  "value": "strong",
+                  "title": "Strong"
+                },
+                {
+                  "value": "em",
+                  "title": "Italic"
+                },
+                {
+                  "value": "code",
+                  "title": "Code"
+                },
+                {
+                  "value": "underline",
+                  "title": "Underline"
+                },
+                {
+                  "value": "strike-through",
+                  "title": "Strike"
+                }
+              ]
+            },
+            "lists": [
+              {
+                "value": "bullet",
+                "title": "Bulleted list"
+              },
+              {
+                "value": "number",
+                "title": "Numbered list"
+              }
+            ],
+            "styles": [
+              {
+                "value": "normal",
+                "title": "Normal"
+              },
+              {
+                "value": "h1",
+                "title": "Heading 1"
+              },
+              {
+                "value": "h2",
+                "title": "Heading 2"
+              },
+              {
+                "value": "h3",
+                "title": "Heading 3"
+              },
+              {
+                "value": "h4",
+                "title": "Heading 4"
+              },
+              {
+                "value": "h5",
+                "title": "Heading 5"
+              },
+              {
+                "value": "h6",
+                "title": "Heading 6"
+              },
+              {
+                "value": "blockquote",
+                "title": "Quote"
+              }
+            ],
+            "of": [],
+            "type": "block"
+          }
+        ],
+        "name": "description",
+        "type": "array",
+        "title": "Full Description"
+      },
+      {
+        "fields": [
+          {
+            "of": [
+              {
+                "type": "string"
+              }
+            ],
+            "name": "top",
+            "type": "array",
+            "title": "Top Notes"
+          },
+          {
+            "of": [
+              {
+                "type": "string"
+              }
+            ],
+            "name": "heart",
+            "type": "array",
+            "title": "Heart / Middle Notes"
+          },
+          {
+            "of": [
+              {
+                "type": "string"
+              }
+            ],
+            "name": "base",
+            "type": "array",
+            "title": "Base Notes"
+          }
+        ],
+        "name": "fragranceNotes",
+        "type": "object"
+      },
+      {
+        "options": {
+          "list": [
+            "Woody",
+            "Oriental",
+            "Floral",
+            "Fresh",
+            "Spicy",
+            "Citrus",
+            "Aquatic",
+            "Musky",
+            "Sweet"
+          ]
+        },
+        "of": [
+          {
+            "type": "string"
+          }
+        ],
+        "name": "fragranceFamily",
+        "type": "array"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Attar Oil",
+              "value": "Attar Oil"
+            },
+            {
+              "title": "Eau de Parfum",
+              "value": "Eau de Parfum"
+            },
+            {
+              "title": "Eau de Toilette",
+              "value": "Eau de Toilette"
+            },
+            {
+              "title": "Incense (Bakhoor)",
+              "value": "Incense"
+            }
+          ]
+        },
+        "name": "concentration",
+        "type": "string"
+      },
+      {
+        "description": "e.g. \"8–10 hours\"",
+        "name": "longevity",
+        "type": "string",
+        "title": "Longevity (hours)"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "Soft / Intimate",
+              "value": "soft"
+            },
+            {
+              "title": "Medium",
+              "value": "medium"
+            },
+            {
+              "title": "Strong",
+              "value": "strong"
+            }
+          ]
+        },
+        "name": "projection",
+        "type": "string"
+      },
+      {
+        "initialValue": true,
+        "name": "skinFriendly",
+        "type": "boolean",
+        "title": "Skin Friendly?"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              },
+              {
+                "flag": "min",
+                "constraint": 1
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "Add different sizes here (e.g. 6ml, 12ml). The first one will be the default.",
+        "of": [
+          {
+            "fields": [
+              {
+                "placeholder": "e.g. 6ml, 100ml",
+                "name": "size",
+                "type": "string",
+                "title": "Size Name"
+              },
+              {
+                "description": "Show as crossed-out price",
+                "name": "mrp",
+                "type": "number",
+                "title": "Original MRP (₹)"
+              },
+              {
+                "description": "The price customer pays",
+                "name": "sellingPrice",
+                "type": "number",
+                "title": "Your Selling Price (₹)"
+              },
+              {
+                "initialValue": 10,
+                "name": "stock",
+                "type": "number",
+                "title": "Current Stock"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "sizes",
+        "type": "array",
+        "title": "Available Sizes & Prices"
+      },
+      {
+        "initialValue": false,
+        "name": "isBestseller",
+        "type": "boolean",
+        "title": "Mark as Bestseller?"
+      },
+      {
+        "initialValue": false,
+        "name": "isFeatured",
+        "type": "boolean",
+        "title": "Show on Homepage?"
+      },
+      {
+        "description": "Max 60 characters",
+        "name": "seoTitle",
+        "type": "string",
+        "title": "SEO Title"
+      },
+      {
+        "rows": 2,
+        "description": "Max 155 characters",
+        "name": "seoDescription",
+        "type": "text",
+        "title": "SEO Description"
+      }
+    ],
+    "name": "product",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "options": {
+          "source": "title",
+          "maxLength": 96
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "custom"
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "slug",
+        "type": "slug"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "name": "image",
+        "type": "image",
+        "title": "Category Image"
+      },
+      {
+        "rows": 3,
+        "name": "description",
+        "type": "text"
+      }
+    ],
+    "name": "category",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "options": {
+          "source": "title",
+          "maxLength": 96
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "custom"
+              },
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "slug",
+        "type": "slug"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "coverImage",
+        "type": "image"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "presence",
+                "constraint": "required"
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "name": "publishedAt",
+        "type": "datetime",
+        "title": "Published Date"
+      },
+      {
+        "rows": 3,
+        "description": "Brief summary of the post",
+        "name": "excerpt",
+        "type": "text"
+      },
+      {
+        "of": [
+          {
+            "marks": {
+              "annotations": [
+                {
+                  "i18nTitleKey": "inputs.portable-text.annotation.link",
+                  "options": {
+                    "modal": {
+                      "type": "popover"
+                    }
+                  },
+                  "fields": [
+                    {
+                      "validation": [
+                        {
+                          "rules": [
+                            {
+                              "flag": "uri",
+                              "constraint": {
+                                "options": {
+                                  "scheme": [
+                                    "/^http$/",
+                                    "/^https$/",
+                                    "/^tel$/",
+                                    "/^mailto$/"
+                                  ],
+                                  "allowRelative": true,
+                                  "relativeOnly": false,
+                                  "allowCredentials": false
+                                }
+                              }
+                            }
+                          ],
+                          "level": "error"
+                        }
+                      ],
+                      "description": "A valid web, email, phone, or relative link.",
+                      "name": "href",
+                      "type": "url",
+                      "title": "Link"
+                    }
+                  ],
+                  "name": "link",
+                  "type": "object"
+                }
+              ],
+              "decorators": [
+                {
+                  "value": "strong",
+                  "title": "Strong"
+                },
+                {
+                  "value": "em",
+                  "title": "Italic"
+                },
+                {
+                  "value": "code",
+                  "title": "Code"
+                },
+                {
+                  "value": "underline",
+                  "title": "Underline"
+                },
+                {
+                  "value": "strike-through",
+                  "title": "Strike"
+                }
+              ]
+            },
+            "lists": [
+              {
+                "value": "bullet",
+                "title": "Bulleted list"
+              },
+              {
+                "value": "number",
+                "title": "Numbered list"
+              }
+            ],
+            "styles": [
+              {
+                "value": "normal",
+                "title": "Normal"
+              },
+              {
+                "value": "h1",
+                "title": "Heading 1"
+              },
+              {
+                "value": "h2",
+                "title": "Heading 2"
+              },
+              {
+                "value": "h3",
+                "title": "Heading 3"
+              },
+              {
+                "value": "h4",
+                "title": "Heading 4"
+              },
+              {
+                "value": "h5",
+                "title": "Heading 5"
+              },
+              {
+                "value": "h6",
+                "title": "Heading 6"
+              },
+              {
+                "value": "blockquote",
+                "title": "Quote"
+              }
+            ],
+            "of": [],
+            "type": "block"
+          },
+          {
+            "type": "image"
+          }
+        ],
+        "name": "body",
+        "type": "array"
+      },
+      {
+        "description": "Max 60 characters",
+        "name": "seoTitle",
+        "type": "string",
+        "title": "SEO Title"
+      },
+      {
+        "rows": 2,
+        "description": "Max 155 characters",
+        "name": "seoDescription",
+        "type": "text",
+        "title": "SEO Description"
+      }
+    ],
+    "name": "blogPost",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "name": "title",
+        "type": "string",
+        "title": "Site Title"
+      },
+      {
+        "name": "description",
+        "type": "text",
+        "title": "Site Description"
+      },
+      {
+        "name": "logo",
+        "type": "image",
+        "title": "Site Logo"
+      },
+      {
+        "description": "Format: 918297008727",
+        "name": "contactNumber",
+        "type": "string",
+        "title": "WhatsApp Number"
+      },
+      {
+        "initialValue": 1500,
+        "name": "freeShippingThreshold",
+        "type": "number",
+        "title": "Free Shipping Threshold (₹)"
+      },
+      {
+        "description": "Leave empty to hide. e.g. \"Free shipping on orders above ₹1500!\"",
+        "name": "announcementBar",
+        "type": "string",
+        "title": "Announcement Bar Text"
+      },
+      {
+        "initialValue": false,
+        "name": "maintenanceMode",
+        "type": "boolean"
+      }
+    ],
+    "name": "siteSettings",
+    "type": "document"
+  },
+  {
+    "fields": [
+      {
+        "readOnly": true,
+        "name": "orderNumber",
+        "type": "string"
+      },
+      {
+        "options": {
+          "list": [
+            {
+              "title": "🟡 Pending / Check Payment",
+              "value": "pending"
+            },
+            {
+              "title": "🟢 Confirmed / Paid",
+              "value": "confirmed"
+            },
+            {
+              "title": "📦 Packed",
+              "value": "packed"
+            },
+            {
+              "title": "🚚 Shipped",
+              "value": "shipped"
+            },
+            {
+              "title": "✅ Delivered",
+              "value": "delivered"
+            },
+            {
+              "title": "❌ Cancelled",
+              "value": "cancelled"
+            },
+            {
+              "title": "💰 Refunded",
+              "value": "refunded"
+            }
+          ]
+        },
+        "initialValue": "pending",
+        "description": "Update this as you process the order. Customer will see this on the website.",
+        "name": "status",
+        "type": "string",
+        "title": "Order Fulfillment Status"
+      },
+      {
+        "fields": [
+          {
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "name": "phone",
+            "type": "string",
+            "title": "Phone Number"
+          },
+          {
+            "name": "email",
+            "type": "string",
+            "title": "Email Address"
+          },
+          {
+            "name": "address",
+            "type": "text",
+            "title": "Full Address"
+          },
+          {
+            "name": "city",
+            "type": "string"
+          },
+          {
+            "name": "state",
+            "type": "string"
+          },
+          {
+            "name": "pincode",
+            "type": "string"
+          }
+        ],
+        "name": "customer",
+        "type": "object",
+        "title": "Customer Details"
+      },
+      {
+        "of": [
+          {
+            "fields": [
+              {
+                "name": "productId",
+                "type": "string",
+                "title": "Product Slug/ID"
+              },
+              {
+                "name": "name",
+                "type": "string",
+                "title": "Product Name"
+              },
+              {
+                "name": "size",
+                "type": "string"
+              },
+              {
+                "name": "quantity",
+                "type": "number"
+              },
+              {
+                "name": "price",
+                "type": "number",
+                "title": "Price (₹)"
+              }
+            ],
+            "type": "object"
+          }
+        ],
+        "name": "items",
+        "type": "array",
+        "title": "Order Items"
+      },
+      {
+        "fields": [
+          {
+            "initialValue": "PhonePe",
+            "name": "method",
+            "type": "string",
+            "title": "Payment Method"
+          },
+          {
+            "name": "utrNumber",
+            "type": "string",
+            "title": "UTR / Transaction ID"
+          },
+          {
+            "options": {
+              "list": [
+                {
+                  "title": "Pending Verification",
+                  "value": "pending"
+                },
+                {
+                  "title": "Verified / Paid",
+                  "value": "paid"
+                },
+                {
+                  "title": "Failed / Rejected",
+                  "value": "failed"
+                }
+              ]
+            },
+            "initialValue": "pending",
+            "name": "paymentStatus",
+            "type": "string"
+          }
+        ],
+        "name": "payment",
+        "type": "object",
+        "title": "Payment Information"
+      },
+      {
+        "fields": [
+          {
+            "name": "subtotal",
+            "type": "number",
+            "title": "Subtotal (₹)"
+          },
+          {
+            "name": "shipping",
+            "type": "number",
+            "title": "Shipping (₹)"
+          },
+          {
+            "name": "total",
+            "type": "number",
+            "title": "Final Total (₹)"
+          }
+        ],
+        "name": "totals",
+        "type": "object",
+        "title": "Order Totals"
+      },
+      {
+        "fields": [
+          {
+            "name": "courier",
+            "type": "string",
+            "title": "Courier Name"
+          },
+          {
+            "name": "trackingId",
+            "type": "string",
+            "title": "Tracking ID"
+          },
+          {
+            "name": "shippedDate",
+            "type": "datetime",
+            "title": "Date Shipped"
+          }
+        ],
+        "name": "tracking",
+        "type": "object",
+        "title": "Shipping / Tracking"
+      },
+      {
+        "description": "Only visible to staff.",
+        "name": "internalNotes",
+        "type": "text",
+        "title": "Internal Admin Notes"
+      }
+    ],
+    "name": "order",
+    "type": "document",
+    "title": "Orders"
+  },
+  {
+    "fields": [
+      {
+        "description": "A short title for the reel (e.g. \"Signature Oud Experience\")",
+        "name": "title",
+        "type": "string"
+      },
+      {
+        "options": {
+          "hotspot": true
+        },
+        "description": "The thumbnail image for the reel (Vertical 9:16 recommended)",
+        "name": "coverImage",
+        "type": "image"
+      },
+      {
+        "validation": [
+          {
+            "rules": [
+              {
+                "flag": "uri",
+                "constraint": {
+                  "options": {
+                    "scheme": [
+                      "/^http$/",
+                      "/^https$/"
+                    ],
+                    "allowRelative": false,
+                    "relativeOnly": false,
+                    "allowCredentials": false
+                  }
+                }
+              }
+            ],
+            "level": "error"
+          }
+        ],
+        "description": "The direct link to the Instagram Reel (e.g. https://www.instagram.com/reels/...)",
+        "name": "instagramUrl",
+        "type": "url",
+        "title": "Instagram Reel URL"
+      },
+      {
+        "description": "Order of appearance on the homepage (ascending)",
+        "name": "order",
+        "type": "number",
+        "title": "Display Order"
+      }
+    ],
+    "name": "reel",
+    "type": "document",
+    "title": "Instagram Reel"
+  }
+]

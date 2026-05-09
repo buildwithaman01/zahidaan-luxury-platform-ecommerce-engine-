@@ -9,15 +9,23 @@ import BrandStory from '@/components/home/BrandStory';
 import WhyUs from '@/components/home/WhyUs';
 import DiscoveryPackCTA from '@/components/home/DiscoveryPackCTA';
 import Testimonials from '@/components/home/Testimonials';
-import InstagramGrid from '@/components/home/InstagramGrid';
+import InstagramReels from '@/components/home/InstagramReels';
 
-import { client, FEATURED_PRODUCTS_QUERY, ALL_CATEGORIES_QUERY } from '@/lib/sanity';
+import { 
+  getFeaturedProducts, 
+  getAllCategories, 
+  getReels,
+  FEATURED_PRODUCTS_QUERY, 
+  ALL_CATEGORIES_QUERY, 
+  REELS_QUERY 
+} from '@/lib/sanity';
 
 export const revalidate = 60; // Revalidate at most every 60 seconds
 
 export default async function Home() {
-  const featuredProducts = await client.fetch(FEATURED_PRODUCTS_QUERY);
-  const categories = await client.fetch(ALL_CATEGORIES_QUERY);
+  const featuredProducts = await getFeaturedProducts();
+  const categories = await getAllCategories();
+  const reels = await getReels();
 
   return (
     <>
@@ -57,7 +65,7 @@ export default async function Home() {
             "priceRange": "₹499 – ₹3,499",
             "hasMap": "https://maps.google.com/?q=Zahidaan+Attars+Perfumes+Patancheru",
             "sameAs": [
-              "https://instagram.com/zahidaan",
+              "https://www.instagram.com/zahidaanattarsandperfumes",
               "https://facebook.com/zahidaan"
             ],
             "areaServed": [
@@ -78,7 +86,7 @@ export default async function Home() {
       <WhyUs />
       <DiscoveryPackCTA />
       <Testimonials />
-      <InstagramGrid />
+      <InstagramReels reels={reels} />
     </>
   );
 }

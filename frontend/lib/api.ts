@@ -6,12 +6,12 @@ const API_BASE = process.env.NEXT_PUBLIC_API_BASE || '';
  * Sends a new order to the backend MySQL API.
  * Validates the order data before sending and handles response errors.
  * 
- * @param {Order} orderData The validated order data.
+ * @param {any} orderData The order data.
  * @returns {Promise<{success: boolean, orderId?: string, error?: string}>} The API response.
  */
-export async function createOrder(orderData: Order) {
+export async function createOrder(orderData: any) {
   try {
-    const response = await fetch(`/api/orders`, {
+    const response = await fetch(`/api.php?action=create_order`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -39,7 +39,7 @@ export async function createOrder(orderData: Order) {
  */
 export async function getOrderStatus(id: string) {
   try {
-    const response = await fetch(`/api/orders/${id}`);
+    const response = await fetch(`/api.php?action=status&token=${id}`);
     
     if (!response.ok) {
       throw new Error(`Server responded with ${response.status}`);

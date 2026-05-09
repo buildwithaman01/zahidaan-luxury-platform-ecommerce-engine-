@@ -21,7 +21,6 @@ export default function TrackOrderPage() {
 
   return (
     <>
-      <Navbar />
       <main className="pt-44 pb-24 bg-z-white">
         <div className="container mx-auto px-6 max-w-xl text-center">
           <h1 className="font-display text-4xl text-z-black mb-8">Track Your <span className="italic">Order</span></h1>
@@ -57,7 +56,6 @@ export default function TrackOrderPage() {
           </div>
         </div>
       </main>
-      <Footer />
     </>
   );
 }

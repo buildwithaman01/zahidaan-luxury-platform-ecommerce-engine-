@@ -25,10 +25,9 @@ export const client = createClient({
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || 'production',
   apiVersion: process.env.NEXT_PUBLIC_SANITY_API_VERSION || '2024-01-01',
-  useCdn: true, 
+  useCdn: false, // Bypassing CDN to ensure owner sees changes INSTANTLY
 });
 
-// Write-capable client for API routes (Orders, Stock updates)
 /**
  * Write-capable client for secure server-side operations (Orders, Stock).
  * Bypasses CDN to ensure data freshless for mutations.
@@ -44,11 +43,6 @@ export const writeClient = createClient({
 const builder = imageUrlBuilder(client);
 
 /**
- * Generates a URL for a Sanity image source.
- * @param {any} source The Sanity image source object.
- * @returns {any} A builder object that can be chained with .url(), .width(), etc.
- */
-/**
  * @function urlFor
  * @description Generates a responsive and optimized image URL from a Sanity source.
  * @param {any} source - Sanity image object or reference.
@@ -60,7 +54,6 @@ export function urlFor(source: any) {
 
 /**
  * Fetches all products from Sanity.
- * @returns {Promise<Product[]>} A validated array of products.
  */
 export async function getAllProducts(): Promise<Product[]> {
   const data = await client.fetch(ALL_PRODUCTS_QUERY);
@@ -69,7 +62,6 @@ export async function getAllProducts(): Promise<Product[]> {
 
 /**
  * Fetches featured products for the homepage.
- * @returns {Promise<Product[]>} A validated array of featured products.
  */
 export async function getFeaturedProducts(): Promise<Product[]> {
   const data = await client.fetch(FEATURED_PRODUCTS_QUERY);
@@ -78,8 +70,6 @@ export async function getFeaturedProducts(): Promise<Product[]> {
 
 /**
  * Fetches a single product by its slug.
- * @param {string} slug The product slug.
- * @returns {Promise<Product | null>} The validated product or null if not found.
  */
 export async function getProductBySlug(slug: string): Promise<Product | null> {
   const data = await client.fetch(PRODUCT_BY_SLUG_QUERY, { slug });
@@ -89,7 +79,6 @@ export async function getProductBySlug(slug: string): Promise<Product | null> {
 
 /**
  * Fetches all blog posts from Sanity.
- * @returns {Promise<BlogPost[]>} A validated array of blog posts.
  */
 export async function getAllBlogPosts(): Promise<BlogPost[]> {
   const data = await client.fetch(ALL_BLOG_POSTS_QUERY);
@@ -98,8 +87,6 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
 
 /**
  * Fetches a single blog post by its slug.
- * @param {string} slug The blog post slug.
- * @returns {Promise<BlogPost | null>} The validated blog post or null if not found.
  */
 export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
   const data = await client.fetch(POST_BY_SLUG_QUERY, { slug });
@@ -109,11 +96,18 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
 
 /**
  * Fetches all categories from Sanity.
- * @returns {Promise<Category[]>} A validated array of categories.
  */
 export async function getAllCategories(): Promise<Category[]> {
   const data = await client.fetch(ALL_CATEGORIES_QUERY);
   return validateArray(CategorySchema, data, 'All Categories');
+}
+
+/**
+ * Fetches all Instagram Reels from Sanity.
+ */
+export async function getReels(): Promise<any[]> {
+  const data = await client.fetch(REELS_QUERY);
+  return data || []; // Minimal validation for reels for now
 }
 
 // GROQ Queries
@@ -157,4 +151,9 @@ export const POST_BY_SLUG_QUERY = `*[_type == "blogPost" && slug.current == $slu
 // All Categories
 export const ALL_CATEGORIES_QUERY = `*[_type == "category"] {
   _id, title, slug, image, description
+}`;
+
+// Instagram Reels
+export const REELS_QUERY = `*[_type == "reel"] | order(order asc) {
+  _id, title, instagramUrl, "image": coverImage.asset->url
 }`;

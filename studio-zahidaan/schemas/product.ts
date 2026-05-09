@@ -13,8 +13,9 @@ export default defineType({
     }),
     defineField({
       name: 'slug',
-      title: 'URL Slug',
+      title: 'URL Slug (Web Address)',
       type: 'slug',
+      description: 'Click "Generate" to create a link. If it says "already in use", add a number at the end (e.g. oud-gold-2).',
       options: { source: 'name', maxLength: 96 },
       validation: Rule => Rule.required()
     }),
@@ -117,14 +118,15 @@ export default defineType({
       name: 'sizes',
       title: 'Available Sizes & Prices',
       type: 'array',
+      description: 'Add different sizes here (e.g. 6ml, 12ml). The first one will be the default.',
       of: [{
         type: 'object',
         fields: [
-          { name: 'size', title: 'Size', type: 'string',
-            description: 'e.g. 6ml, 12ml, 50ml, 100ml' },
-          { name: 'mrp', title: 'MRP (₹)', type: 'number' },
-          { name: 'sellingPrice', title: 'Selling Price (₹)', type: 'number' },
-          { name: 'stock', title: 'Stock (units)', type: 'number' },
+          { name: 'size', title: 'Size Name', type: 'string',
+            placeholder: 'e.g. 6ml, 100ml' },
+          { name: 'mrp', title: 'Original MRP (₹)', type: 'number', description: 'Show as crossed-out price' },
+          { name: 'sellingPrice', title: 'Your Selling Price (₹)', type: 'number', description: 'The price customer pays' },
+          { name: 'stock', title: 'Current Stock', type: 'number', initialValue: 10 },
         ]
       }],
       validation: Rule => Rule.required().min(1)
@@ -158,8 +160,15 @@ export default defineType({
   preview: {
     select: {
       title: 'name',
-      subtitle: 'category',
+      category: 'category.title',
       media: 'images.0'
+    },
+    prepare({ title, category, media }) {
+      return {
+        title,
+        subtitle: category ? `Category: ${category}` : 'No Category',
+        media
+      }
     }
   }
 })

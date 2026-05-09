@@ -61,8 +61,15 @@ export default defineType({
   preview: {
     select: {
       title: 'title',
-      author: 'publishedAt',
+      date: 'publishedAt',
       media: 'coverImage'
+    },
+    prepare({ title, date, media }) {
+      return {
+        title: title || 'Untitled Post',
+        subtitle: date ? new Date(date).toLocaleDateString() : 'Draft',
+        media
+      }
     }
   }
 })

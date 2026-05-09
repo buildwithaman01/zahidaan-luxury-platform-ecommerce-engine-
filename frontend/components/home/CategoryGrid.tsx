@@ -8,8 +8,9 @@ import ImageWithFallback from '@/components/ui/ImageWithFallback';
 
 interface Category {
   _id: string;
-  title: string;
-  slug: { current: string };
+  name?: string;
+  title?: string;
+  slug?: { current: string };
   image?: any;
   description?: string;
 }
@@ -35,26 +36,26 @@ const CategoryGrid = ({ categories: initialCategories }: { categories: Category[
           <div className="flex overflow-x-auto pb-10 md:grid md:grid-cols-5 gap-4 md:gap-6 scrollbar-hide px-2 md:px-0 snap-x snap-mandatory">
             {categories.map((cat: any, index) => (
               <motion.div
-                key={cat.slug.current}
+                key={cat.slug?.current || index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
                 viewport={{ once: true }}
                 className="min-w-[240px] md:min-w-0 snap-center"
               >
-                <Link href={`/shop/${cat.slug.current}`} className="group block relative aspect-[4/5] md:aspect-[3/4] overflow-hidden bg-z-mist rounded-sm md:rounded-none">
+                <Link href={`/shop/${cat.slug?.current || ''}`} className="group block relative aspect-[4/5] md:aspect-[3/4] overflow-hidden bg-z-mist rounded-sm md:rounded-none">
                   <ImageWithFallback
                     src={cat.image}
-                    alt={cat.title}
+                    alt={cat.name || cat.title || 'Category Image'}
                     width={400}
-                    fallbackType={cat.slug.current === 'attars' ? 'attar' : 'perfume'}
+                    fallbackType={cat.slug?.current === 'attars' ? 'attar' : 'perfume'}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   
                   <div className="absolute inset-0 bg-gradient-to-t from-z-black/80 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
                   <div className="absolute bottom-6 left-6 right-6">
                     <h3 className="font-display text-xl md:text-2xl text-z-white italic group-hover:text-z-gold transition-colors">
-                      {cat.title}
+                      {cat.name || cat.title}
                     </h3>
                     <div className="w-8 h-[1px] bg-z-gold mt-2 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500" />
                   </div>

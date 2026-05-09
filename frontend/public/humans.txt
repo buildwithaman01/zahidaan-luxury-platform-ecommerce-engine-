@@ -1,0 +1,16 @@
+/* TEAM */
+Chef: Pehchanly
+Website: https://pehchanly.com
+Location: Hyderabad, India
+
+/* THANKS */
+Client: Zahid (ZAHIDAAN)
+
+/* SITE */
+Last update: 2026/05/09
+Language: English, Arabic
+Doctype: HTML5
+IDE: Antigravity AI
+Stack: Next.js 14, React, Tailwind CSS, Framer Motion, Sanity CMS, PHP API, MySQL
+Hosting: MilesWeb (Shared PHP)
+CDN: Cloudflare

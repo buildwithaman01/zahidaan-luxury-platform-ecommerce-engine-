@@ -5,6 +5,9 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: "ZAHIDAAN Fragrance Journal | Attar & Perfume Guides",
   description: "Read our journal for expert guides on attars, Arabian ouds, and how to choose your signature fragrance. Authentic wisdom from ZAHIDAAN.",
+  alternates: {
+    canonical: 'https://zahidaan.in/blog/',
+  },
 };
 
 export const revalidate = 60; // Revalidate every minute

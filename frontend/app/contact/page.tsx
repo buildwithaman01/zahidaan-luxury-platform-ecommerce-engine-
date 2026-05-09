@@ -3,6 +3,9 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: "Contact Us | ZAHIDAAN Attars & Perfumes",
   description: "Get in touch with ZAHIDAAN. Visit our boutique in Patancheru or reach out for inquiries about our authentic fragrances.",
+  alternates: {
+    canonical: 'https://zahidaan.in/contact/',
+  },
 };
 
 export default function ContactPage() {

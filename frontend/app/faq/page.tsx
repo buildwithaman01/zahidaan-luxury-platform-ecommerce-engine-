@@ -6,6 +6,9 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: "Fragrance & Shipping FAQ | ZAHIDAAN",
   description: "Frequently asked questions about ZAHIDAAN attars, perfumes, alcohol-free fragrances, and pan-India shipping.",
+  alternates: {
+    canonical: 'https://zahidaan.in/faq/',
+  },
 };
 
 const faqs = [
@@ -61,7 +64,6 @@ export default function FAQPage() {
           })
         }}
       />
-      <Navbar />
       <main className="bg-z-white min-h-screen">
         <section className="pt-52 pb-20 bg-z-black text-z-white">
           <div className="container mx-auto px-6 text-center">
@@ -103,7 +105,6 @@ export default function FAQPage() {
           </div>
         </section>
       </main>
-      <Footer />
     </>
   );
 }

@@ -31,4 +31,17 @@ export default defineType({
       rows: 3
     }),
   ],
+  preview: {
+    select: {
+      title: 'title',
+      media: 'image'
+    },
+    prepare({ title, media }) {
+      return {
+        title: title || 'New Category',
+        subtitle: 'Product Collection',
+        media
+      }
+    }
+  }
 })
